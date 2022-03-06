@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Zen+Maru+Gothic&family=Source+Code+Pro&display=swap');
+
+* {
+  box-sizing: content-box;
+}
+
+p {
+  margin: 0;
+}
+
+ol {
+  margin: 0;
+}
+
+code {
+  font-family: 'Source Code Pro';
+}
+
+:root {
+  --page-size-w: 210mm;
+  --page-size-h: 297mm;
+  --aux-line-color: #777;
+  font-family: 'Zen Maru Gothic';
+  font-size: 4mm;
+}
+
+body {
+  margin: auto;
+  width: var(--page-size-w);
+  height: var(--page-size-h);
+  border: 1px black solid;
+  display: grid;
+}
+
+#pagebox {
+  margin: 5mm;
+  border: 1px var(--aux-line-color) dashed;
+  display: grid;
+  grid-template: "ti ti ti" min-content
+                 "np np np" 1fr
+                 "mb mb bq"
+                 "cm cm bq"
+                / 1fr 1fr 1fr;
+  gap: 5mm;
+}
+
+#titlebox {
+  grid-area: ti;
+  font-size: 20mm;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  gap: 0.2em;
+}
+
+#titlebox * {
+  font-family: 'Yuji Syuku';
+}
+
+#oucrc-logo-1 {
+  display: grid;
+  width: min-content;
+  grid-template-columns: repeat(2, max-content);
+  font-size: 0.5em;
+  --pseudo-row-gap: -0.6em
+}
+
+#oucrc-logo-1 :nth-child(n + 3) {
+  margin-top: var(--pseudo-row-gap);
+}
+
+#members {
+  grid-area: mb;
+  font-size: smaller;
+}
+
+#big-qr {
+  grid-area: bq;
+  align-self: flex-end;
+}
+
+#big-qr-img {
+  display: block;
+  margin: auto;
+  width: 70mm;
+  height: 70mm;
+}
+
+#comment {
+  grid-area: cm;
+  font-size: x-small;
+}
