@@ -16,6 +16,10 @@ code {
   font-family: 'Source Code Pro';
 }
 
+.justified {
+  text-align: justify;
+}
+
 :root {
   --page-size-w: 210mm;
   --page-size-h: 297mm;
@@ -37,10 +41,10 @@ body {
   border: 1px var(--aux-line-color) dashed;
   display: grid;
   grid-template: "ti ti ti" min-content
-                 "np np np" 1fr
+                 "rc np np" 1fr
                  "mb mb bq"
                  "cm cm bq"
-                / 1fr 1fr 1fr;
+                / auto 1fr 1fr;
   gap: 5mm;
 }
 
@@ -57,7 +61,9 @@ body {
   font-family: 'Yuji Syuku';
 }
 
-#oucrc-logo-1 {
+#oucrc-logo {
+  position: relative;
+  top: 8%;
   display: grid;
   width: min-content;
   grid-template-columns: repeat(2, max-content);
@@ -65,8 +71,22 @@ body {
   --pseudo-row-gap: -0.6em
 }
 
-#oucrc-logo-1 :nth-child(n + 3) {
+#oucrc-logo :nth-child(n + 3) {
   margin-top: var(--pseudo-row-gap);
+}
+
+#recommended-for {
+ grid-area: rc;
+ width: min-content;
+}
+
+#recommended-for ul {
+  width: max-content;
+}
+
+#recommended-for ul li::marker {
+  content: '‣';
+  font-family: sans-serif;
 }
 
 #members {
@@ -76,6 +96,7 @@ body {
 
 #big-qr {
   grid-area: bq;
+  width: fit-content;
   align-self: flex-end;
 }
 
