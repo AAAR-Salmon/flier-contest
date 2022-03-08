@@ -12,6 +12,18 @@ ol {
   margin: 0;
 }
 
+ul {
+  margin: 0;
+}
+
+dl {
+  margin: 0;
+}
+
+figure {
+  margin: 0;
+}
+
 code {
   font-family: 'Source Code Pro';
 }
@@ -36,20 +48,32 @@ body {
   display: grid;
 }
 
+h1 {
+  margin: 0;
+  font-size: 1em;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
 #pagebox {
   margin: 5mm;
   border: 1px var(--aux-line-color) dashed;
   display: grid;
-  grid-template: "ti ti ti" min-content
-                 "rc np np" 1fr
-                 "mb mb bq"
-                 "cm cm bq"
-                / auto 1fr 1fr;
+  grid-template:
+    "ttl ttl ttl"
+    "rec inf inf" 16em
+    "rec qr1 qr1"
+    "mbr mbr qr2"
+    "com com qr2"
+   / 1fr 1fr min-content;
   gap: 5mm;
 }
 
 #titlebox {
-  grid-area: ti;
+  grid-area: ttl;
   font-size: 20mm;
   margin: 0 auto;
   display: flex;
@@ -76,7 +100,7 @@ body {
 }
 
 #recommended-for {
- grid-area: rc;
+ grid-area: rec;
  width: min-content;
 }
 
@@ -89,13 +113,48 @@ body {
   font-family: sans-serif;
 }
 
+#info {
+  grid-area: inf;
+}
+
+#info table th {
+  text-align: left;
+  vertical-align: top;
+}
+
+#info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#site-qr {
+  grid-area: qr1;
+  position: relative;
+}
+
+#site-qr>div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#site-qr figure img {
+  display: block;
+  margin: auto;
+}
+
 #members {
-  grid-area: mb;
+  grid-area: mbr;
   font-size: smaller;
 }
 
 #big-qr {
-  grid-area: bq;
+  grid-area: qr2;
   width: fit-content;
   align-self: flex-end;
 }
@@ -108,6 +167,6 @@ body {
 }
 
 #comment {
-  grid-area: cm;
+  grid-area: com;
   font-size: x-small;
 }
