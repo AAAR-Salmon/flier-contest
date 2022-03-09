@@ -35,7 +35,7 @@ code {
 :root {
   --page-size-w: 210mm;
   --page-size-h: 297mm;
-  --aux-line-color: #777;
+  --aux-line-color: #fff;
   font-family: 'Zen Maru Gothic';
   font-size: 4mm;
 }
@@ -44,7 +44,7 @@ body {
   margin: auto;
   width: var(--page-size-w);
   height: var(--page-size-h);
-  border: 1px black solid;
+  border: none;
   display: grid;
 }
 
